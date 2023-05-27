@@ -1,0 +1,28 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "DOB": "04-05-2004",
+      "email": "Sincere@april.biz",
+      "Salary": "10000",
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "name": "Graham",
+      "DOB": "f",
+      "email": "Sincere@april.biz",
+      "Salary": "20000",
+      "gender": "female"
+    },
+    {
+      "id": "3",
+      "name": "anu",
+      "DOB": "2023-05-08",
+      "email": "anu@gmai.com",
+      "Salary": "15000",
+      "gender": "female"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+<div class="container">
+   <div class="row">
+        <div class="col-md-6  mt-5">
+            
+        
+        
+            <form>
+                <div class="mb-3">
+                    <label  class="form-label">Id</label>
+                    <input required name="id" [(ngModel)]="user.id" type="text" class="form-control" >
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input required name="name" [(ngModel)]="user.name" type="text" class="form-control" >
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Date of Birth</label>
+                    <input required name="date" [(ngModel)]="user.DOB" type="date" class="form-control" >
+                  </div>
+                <div class="mb-3">
+                  <label  class="form-label">Email address</label>
+                  <input required name="email" [(ngModel)]="user.email" type="email" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label  class="form-label">Salary</label>
+                  <input required name="salary" [(ngModel)]="user.Salary" type="text" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label  class="form-label">Gender</label><br>
+                   <input required name="male" [(ngModel)]="user.gender" type="radio" id="Male" name="fav_language" value="Male">
+                  <label for="html">Male</label><br>
+                  <input required name="female" [(ngModel)]="user.gender" type="radio" id="Female" name="fav_language" value="Female">
+                  <label for="css">Female</label><br>
+                </div>
+    
+                <button (click)="updateUser()"  type="submit" class="btn btn-primary m-1">Update</button>
+              </form>
+        </div>
+        
+   </div>
+</div>

@@ -1,0 +1,9 @@
+.cards{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.table{
+    border: 2px solid black;
+}

@@ -1,0 +1,104 @@
+<div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique quisquam quo temporibus quasi deserunt, saepe inventore dolor? Quibusdam culpa recusandae libero non veritatis, at debitis explicabo labore, quas placeat modi!</p>
+            </div>
+            <div class="col-5">  <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" (keyup)="search($event)" aria-label="Search">
+              </form>
+            </div>
+            <div class="col-md-5">
+                <button data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Create new User
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table showing User data -->
+<div class="container mt-5">
+    <div class="row cards">
+        <div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date of Birth</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users | filter:searchKey:'name'">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.DOB}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.Salary}}</td>
+                    <td>{{user.gender}}</td>
+                    <td><div class="buttons">
+                        <button routerLink="view-user/{{user.id}}" class="m-1">Edit</button>
+                        <button (click)="deleteUser(user.id)" class="m-1">Delete</button>
+                    </div></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<!-- modal to create new user -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- form............ -->
+          <form>
+            <div class="mb-3">
+                <label  class="form-label">Id</label>
+                <input required name="id" [(ngModel)]="user.id" type="text" class="form-control" >
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input required name="name" [(ngModel)]="user.name" type="text" class="form-control" >
+              </div>
+              <div class="mb-3">
+                <label  class="form-label">Date of Birth</label>
+                <input required name="date" [(ngModel)]="user.DOB" type="date" class="form-control" >
+              </div>
+            <div class="mb-3">
+              <label  class="form-label">Email address</label>
+              <input required name="email" [(ngModel)]="user.email" type="email" class="form-control" >
+            </div>
+            <div class="mb-3">
+              <label  class="form-label">Salary</label>
+              <input required name="salary" [(ngModel)]="user.Salary" type="text" class="form-control" >
+            </div>
+            <div class="mb-3">
+              <label  class="form-label">Gender</label><br>
+               <input required name="male" [(ngModel)]="user.gender" type="radio" id="Male" name="fav_language" value="Male">
+              <label for="html">Male</label><br>
+              <input required name="female" [(ngModel)]="user.gender" type="radio" id="Female" name="fav_language" value="Female">
+              <label for="css">Female</label><br>
+            </div>
+
+            <button (click)="addUser()" type="submit" class="btn btn-primary m-1">Submit</button>
+            <button type="button" class="btn btn-secondary m-1" data-bs-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
